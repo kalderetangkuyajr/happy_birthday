@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papansin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--moss:#4f6f52;
+--black:#0d0d0d;
+--gray:#1f1f1f;
+--white:#f5f5f5;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:var(--black);
+color:var(--white);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+width:100%;
+max-width:420px;
+padding:20px;
+z-index:2;
+position:relative;
+top:-120px;
+}
+
+/* PASSWORD */
+
+.password-box{
+display:flex;
+justify-content:center;
+gap:14px;
+}
+
+.password-box input{
+width:65px;
+height:80px;
+font-size:32px;
+text-align:center;
+border:none;
+outline:none;
+background:var(--gray);
+color:var(--white);
+border-radius:12px;
+}
+
+.password-box input:focus{
+border:2px solid var(--moss);
+}
+
+.hint-label {
+  color: var(--gray);
+  font-weight: normal;
+}
+
+.hint-text {
+  color: var(--moss);
+  font-weight: bold;
+}
+/* BIRTHDAY */
+
+.hidden{
+display:none;
+}
+
+.title{
+font-family:'Fleur De Leah', cursive;
+font-size:clamp(80px, 18vw, 140px);
+line-height:1.1;
+opacity:0;
+animation:fadeIn 3s forwards;
+}
+
+.subtitle{
+font-family:'Fleur De Leah', cursive;
+margin-top:25px;
+font-size:clamp(50px, 10vw, 80px);
+color:var(--moss);
+opacity:0;
+animation:fadeIn 3s forwards;
+animation-delay:2s;
+}
+
+@keyframes fadeIn{
+0%{
+opacity:0;
+transform:translateY(0);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TULIP BACKGROUND */
+
+.tulip-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
+z-index:0;
+pointer-events:none;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+
+<div class="container" id="loginPage">
+
+
+
+<div class="password-box">
+<input type="text" maxlength="1">
+<input type="text" maxlength="1">
+<input type="text" maxlength="1">
+<input type="text" maxlength="1">
+</div>
+
+<div class="hint">
+  <span class="hint-label">hint:</span>
+  <span class="hint-text"> promised year.</span>
+</div>
+
+</div>
+
+<!-- BIRTHDAY PAGE -->
+<iframe src="tulip.html" class="tulip-bg hidden" id="tulipBG"></iframe>
+
+
+<div class="container hidden" id="birthdayPage">
+
+<div class="title">Happy Birthday!!!</div>
+<div class="subtitle">My dearest</div>
+
+</div>
+
+<script>
+
+const inputs = document.querySelectorAll(".password-box input")
+
+inputs.forEach((input,index)=>{
+
+input.addEventListener("input",()=>{
+
+if(input.value.length === 1 && index < inputs.length-1){
+inputs[index+1].focus()
+}
+
+checkPassword()
+
+})
+
+input.addEventListener("keydown",(e)=>{
+
+if(e.key === "Backspace" && input.value === "" && index > 0){
+inputs[index-1].focus()
+}
+
+})
+
+})
+
+
+inputs[0].focus();
+function checkPassword(){
+
+let password=""
+
+inputs.forEach(i=>{
+password += i.value
+})
+
+if(password.length === 4){
+
+if(password === "2028"){
+
+document.getElementById("loginPage").style.display="none"
+
+document.getElementById("birthdayPage").classList.remove("hidden")
+
+document.getElementById("tulipBG").classList.remove("hidden")
+
+const music = document.getElementById("birthdayMusic");
+music.volume = 0; // start muted
+music.play();
+
+let volume = 0;
+const fadeInterval = setInterval(() => {
+    if(volume < 0.5){           // maximum 70%
+        volume += 0.01;         // slower fade
+        if(volume > 0.5) volume = 0.5;
+        music.volume = volume;
+    } else {
+        clearInterval(fadeInterval);
+    }
+}, 100); // increase every 100ms → ~10s fade increase every 100ms → 0.01 per step ≈ 10s fade
+
+}else{
+
+inputs.forEach(i=> i.value="")
+inputs[0].focus()
+
+}
+
+}
+
+}
+
+</script>
+
+<audio id="birthdayMusic" src="hbd.m4a" loop></audio>
+</body>
+</html>
