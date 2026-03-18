@@ -86,7 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======================
   // LETTER
   // ======================
-  const message = `It does not matter how many times I’ve had to comfort you for another man, nor how many times I may have to—for every ache it brings me and every moment it takes, I know it will all be worth it.`;
+  const message = `I’ll turn on all the lights
+and stay up all night
+until the sky turns bright,
+just to read the book of our life.
+
+I can’t help but smile as I turn every page,
+yet without you, seconds feel like ages.
+If only we could weave a few more chapters,
+perhaps no question would remain unanswered.
+
+My hand trembles as I turn the few last pages,
+my heartbeat races,
+and in sadness, it is caged.
+I’m still hoping for the day I once again feel your embrace.`;
 
   function typeText() {
     const el = document.getElementById("typedText");
