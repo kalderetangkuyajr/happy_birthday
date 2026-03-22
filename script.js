@@ -106,7 +106,7 @@ as the night we first met.`,
 but at least I know
 that we're staring at the same moon.`,
 
-`Hihigugmaon ko ikaw kada adlaw.`
+`Hihigugmaon ko ikaw kada adlaw.`,
 
  `Nahihidlaw ako ha imo.`
 
