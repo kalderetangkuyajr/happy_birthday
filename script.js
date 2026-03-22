@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputs = document.querySelectorAll(".password-box input");
   let isUnlocked = false;
 
-  // ======================
-  // INPUT HANDLING
-  // ======================
   inputs.forEach((input, index) => {
 
     input.addEventListener("input", () => {
@@ -25,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputs[0].focus();
 
-  // ======================
-  // PASSWORD CHECK
-  // ======================
   function checkPassword() {
     if (isUnlocked) return;
 
@@ -44,10 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const moon = document.querySelector(".moon");
         const music = document.getElementById("birthdayMusic");
 
-        // Hide login
         login.style.display = "none";
 
-        // Show main elements
         [birthdayPage, tulipBG, moon].forEach(el => {
           el.classList.remove("hidden");
         });
@@ -83,10 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ======================
-  // LETTER
-  // ======================
-const message = `I’ll turn on all the lights
+const messages = [
+
+`I’ll turn on all the lights
 and stay up all night
 until the sky turns bright,
 just to read the book of our life.
@@ -99,10 +90,55 @@ perhaps no question would remain unanswered.
 My hand trembles as I turn the few last pages,
 my heartbeat races,
 and in sadness, it is caged.
-I’m still hoping for the day I once again feel your embrace.`;
+I’m still hoping for the day I once again feel your embrace.`,
 
+`It does not matter how many times I’ve had to comfort you for another man,
+nor how many times I may have to—
+for every ache it brings me and every moment it takes,
+I know it will all be worth it.`,
+
+`If we once again meet—
+my heart will beat the same way
+as the night we first met.`,
+
+`For the longest time,
+I will wait for your promised year
+because I know how connected our souls are.`,
+
+`We might be walking on different paths,
+but at least I know
+that we're staring at the same moon.`,
+
+`Hihigugmaon ko ikaw kada adlaw,
+nahihidlaw ako ha imo.`
+
+];
+
+  let shuffledMessages = [];
+let messageIndex = 0;
+
+function shuffleMessages() {
+  shuffledMessages = [...messages];
+
+  for (let i = shuffledMessages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledMessages[i], shuffledMessages[j]] =
+    [shuffledMessages[j], shuffledMessages[i]];
+  }
+
+  messageIndex = 0;
+}
+
+shuffleMessages();
+  
 function typeText() {
+  if (messageIndex >= shuffledMessages.length) {
+    shuffleMessages(); // loop again
+  }
+
+  const message = shuffledMessages[messageIndex++];
   const el = document.getElementById("typedText");
+
   el.innerHTML = "";
   let i = 0;
 
@@ -122,9 +158,6 @@ window.toggleLetter = function () {
   }
 };
 
-  // ======================
-  // PHOTOS
-  // ======================
   const tulips = document.querySelectorAll('.tulip');
   const overlay = document.getElementById('polaroidOverlay');
   const polaroidImg = document.getElementById('polaroidImg');
@@ -172,9 +205,6 @@ window.toggleLetter = function () {
     polaroidImg.src = '';
   });
 
-  // ======================
-  // STARS (FIXED)
-  // ======================
   function createStars() {
     const starCount = 100;
 
@@ -199,9 +229,6 @@ window.toggleLetter = function () {
     }
   }
 
-  // ======================
-  // SKY EFFECTS (FIXED)
-  // ======================
   function createShootingStar() {
     const star = document.createElement("div");
     star.className = "shooting-star";
