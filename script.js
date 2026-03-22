@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  let typingInterval = null;
+
   const inputs = document.querySelectorAll(".password-box input");
   let isUnlocked = false;
 
@@ -130,8 +132,12 @@ function shuffleMessages() {
 shuffleMessages();
   
 function typeText() {
+
+
+  if (typingInterval) clearInterval(typingInterval);
+
   if (messageIndex >= shuffledMessages.length) {
-    shuffleMessages(); // loop again
+    shuffleMessages();
   }
 
   const message = shuffledMessages[messageIndex++];
@@ -140,10 +146,13 @@ function typeText() {
   el.innerHTML = "";
   let i = 0;
 
-  const interval = setInterval(() => {
+  typingInterval = setInterval(() => {
     el.innerHTML += message.charAt(i);
     i++;
-    if (i >= message.length) clearInterval(interval);
+    if (i >= message.length) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+    }
   }, 70);
 }
 
@@ -151,9 +160,16 @@ window.toggleLetter = function () {
   const letter = document.getElementById("letter");
   letter.classList.toggle("show");
 
-  if (letter.classList.contains("show")) {
-    typeText();
+  if (!letter.classList.contains("show")) {
+    if (typingInterval) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+    }
+    document.getElementById("typedText").innerHTML = "";
+    return;
   }
+
+  typeText();
 };
 
   const tulips = document.querySelectorAll('.tulip');
