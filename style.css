@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* 🚫 disables scrolling */
+  overflow: hidden; 
 }
 
 :root{
@@ -129,7 +129,6 @@ transform:translateY(0);
   justify-content: center;
   align-items: flex-end; /* bottom */
 }
-
 
 .moon{
 position:absolute;
@@ -282,18 +281,15 @@ font-family:sans-serif;
 color: var(--white);
 position: relative;
 }
-/* hide tulip scene by default */
+
 #tulipBG{
   display: none;
 }
 
-/* only show in main mode */
 body.main-mode #tulipBG{
   display: flex;
 }
 
-/* stars */
-/* container for stars */
 .star {
   position: absolute;
   background: white;
@@ -303,7 +299,6 @@ body.main-mode #tulipBG{
   z-index: 1;
 }
 
-/* twinkle animation for each star */
 @keyframes twinkleStar {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
@@ -318,16 +313,15 @@ body.main-mode #tulipBG{
   z-index:2;
 }
 
-/* garden */
 .garden{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;   /* ✅ centers horizontsunally */
+  justify-content: center; 
   align-items: flex-end;
 
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;            /* ✅ FORCE center */
+  margin: 0 auto; 
 
   gap: clamp(30px,6vw,80px);
   margin-bottom: clamp(40px,10vh,100px);
@@ -335,7 +329,6 @@ body.main-mode #tulipBG{
   z-index: 2;
 }
 
-/* tulip */
 .tulip{
 position:relative;
 width:clamp(50px,8vw,90px);
@@ -357,10 +350,10 @@ transform-origin:bottom center;
    animation-delay: 3s;
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* align petals + stem to bottom */
+  align-items: flex-end;
   width: 100%;
   height: 100%;
-  transform-origin: bottom center; /* keep sway around bottom */
+  transform-origin: bottom center; 
 }
 
 .tulip:nth-child(1) .tulip-inner { animation-delay: 2s; }
@@ -381,7 +374,6 @@ transform-origin:bottom center;
   }
 }
 
-/* stem */
 .stem{
 position:absolute;
 bottom:0;
@@ -391,7 +383,6 @@ background:#2e8b57;
  z-index:2;
 }
 
-/* leaves */
 .leaf{
 position:absolute;
 width:clamp(25px,4vw,45px);
@@ -412,7 +403,6 @@ right:-40%;
 transform:rotate(40deg);
 }
 
-/* petals */
 .petal{
 position:absolute;
 width: clamp(28px, 10vw, 36px); 
@@ -424,7 +414,6 @@ transform-origin:bottom center;
 z-index: 2;
 }
 
-/* colors */
 .red{
 background:#f34262;
 color:#f34262;
@@ -445,7 +434,6 @@ background:#4572e6;
 color:#4572e6;
 }
 
-/* petal positions */
 .leftPetal{
 transform:translateX(-90%) rotate(0deg);
 animation:bloomLeft 3s forwards 2s, glow 2s infinite alternate;
@@ -458,7 +446,6 @@ animation:bloomMiddle 3s forwards 2s, glow 2s infinite alternate;
 z-index: 3;
 }
 
-/* stronger shading for middle petal */
 .middlePetal.red {
   background: radial-gradient(circle at 50% 50%, #f34262 60%, #a91f3d 100%);
   box-shadow: inset -5px 0 10px rgba(0,0,0,0.2), 
@@ -503,26 +490,22 @@ z-index: 4;
 100%{transform:translateX(-50%) scaleY(1);}
 }
 
-/* glow animations per color */
-
 @keyframes glow{
 0%{filter:drop-shadow(0 0 5px currentColor);}
 100%{filter:drop-shadow(0 0 25px currentColor);}
 }
 
-/* mobile adjustment */
 @media (max-width:600px){
 
 .petal{
 position:absolute;
-width: clamp(28px, 10vw, 36px);   /* slightly wider on small screens */
-height: clamp(45px, 15vh, 60px);  /* slightly shorter but proportional */
+width: clamp(28px, 10vw, 36px); 
+height: clamp(45px, 15vh, 60px); 
 border-radius:40px 40px 30px 30px;
 top:-5%;
 left:50%;
 transform-origin:bottom center;
 }
-
 }
 
 .shooting-star{
@@ -555,8 +538,6 @@ transform:translate(-600px,600px) rotate(45deg);
 .shooting-star:nth-child(2){left:60%; animation-delay:3s;}
 .shooting-star:nth-child(3){left:80%; animation-delay:5s;}
 
-
-
 .firefly {
   position: absolute;
   width: 6px;
@@ -586,4 +567,3 @@ transform:translate(-600px,600px) rotate(45deg);
   background:#041f0f;
   z-index:2;
 }
-
