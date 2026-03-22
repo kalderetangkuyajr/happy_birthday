@@ -78,19 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
 const messages = [
 
 `I’ll turn on all the lights
-and stay up all night
-until the sky turns bright,
-just to read the book of our life.
+and stay awake through the night
+waiting for the morning light
+just to read the story of our life.
 
-I can’t help but smile as I turn every page,
+I smile softly at each page,
 yet without you, seconds feel like ages.
-If only we could weave a few more chapters,
-perhaps no question would remain unanswered.
+If only we could weave a few more chapters, 
+perhaps no questions would remain unanswered.
 
-My hand trembles as I turn the few last pages,
-my heartbeat races,
-and in sadness, it is caged.
-I’m still hoping for the day I once again feel your embrace.`,
+My hands tremble at the final page,
+my beating heart confined in a cage.
+I still linger on your name, like a moth to a flame.
+And though you’ve chosen a different lane, 
+I still hope that if we meet again, your embrace feels the same.`,
 
 `It does not matter how many times I’ve had to comfort you for another man,
 nor how many times I may have to—
@@ -101,16 +102,13 @@ I know it will all be worth it.`,
 my heart will beat the same way
 as the night we first met.`,
 
-`For the longest time,
-I will wait for your promised year
-because I know how connected our souls are.`,
-
 `We might be walking on different paths,
 but at least I know
 that we're staring at the same moon.`,
 
-`Hihigugmaon ko ikaw kada adlaw,
-nahihidlaw ako ha imo.`
+`Hihigugmaon ko ikaw kada adlaw.`
+
+ `Nahihidlaw ako ha imo.`
 
 ];
 
