@@ -82,8 +82,12 @@ const messages = [
 `It does not matter how many times I’ve had to comfort you for another man,
 nor how many times I may have to—
 for every ache it brings me and every moment it takes,
-I know it will all be worth it.`,
+I can only hope it will all be worth it.`,
 
+`If we once again meet—
+my heart will beat the same way
+as the night we first met.`,
+  
 `We might be walking on different paths,
 but at least I know
 that we're staring at the same moon.`,
@@ -103,10 +107,6 @@ my beating heart confined in a cage.
 I still linger on your name, like a moth to a flame.
 And though you’ve chosen a different lane, 
 I still hope that if we meet again, your embrace feels the same.`,
-
-`If we once again meet—
-my heart will beat the same way
-as the night we first met.`,
 
 `Hihigugmaon ko ikaw kada adlaw.`,
 
