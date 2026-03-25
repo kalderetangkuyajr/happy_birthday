@@ -79,11 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const messages = [
   
-`It does not matter how many times I’ve had to comfort you for another man,
-nor how many times I may have to—
-for every ache it brings me and every moment it takes,
-I can only hope it will all be worth it.`,
-
 `If we once again meet—
 my heart will beat the same way
 as the night we first met.`,
