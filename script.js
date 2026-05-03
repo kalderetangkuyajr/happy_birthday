@@ -77,35 +77,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-const messages = [
+const messages = [ 
   
-`If we once again meet—
-my heart will beat the same way
-as the night we first met.`,
+// `If we once again meet—
+// my heart will beat the same way
+// as the night we first met.`,
   
-`We might be walking on different paths,
-but at least I know
-that we're staring at the same moon.`,
+// `We might be walking on different paths,
+// but at least I know
+// that we're staring at the same moon.`,
   
-`I’ll turn on all the lights
-and stay awake through the night
-waiting for the morning light
-just to read the story of our life.
+// `I’ll turn on all the lights
+// and stay awake through the night
+// waiting for the morning light
+// just to read the story of our life.
 
-I smile softly at each page,
-yet without you, seconds feel like ages.
-If only we could weave a few more chapters, 
-perhaps no questions would remain unanswered.
+// I smile softly at each page,
+// yet without you, seconds feel like ages.
+// If only we could weave a few more chapters, 
+// perhaps no questions would remain unanswered.
 
-My hands tremble at the final page,
-my beating heart confined in a cage.
-I still linger on your name, like a moth to a flame.
-And though you’ve chosen a different lane, 
-I still hope that if we meet again, your embrace feels the same.`,
+// My hands tremble at the final page,
+// my beating heart confined in a cage.
+// I still linger on your name, like a moth to a flame.
+// And though you’ve chosen a different lane, 
+// I still hope that if we meet again, your embrace feels the same.`,
 
-`Hihigugmaon ko ikaw kada adlaw.`,
+// `Hihigugmaon ko ikaw kada adlaw.`,
 
- `Nahihidlaw ako ha imo.`
+//  `Nahihidlaw ako ha imo.`
+   `I wish you all the best ;)`
 
 ];
 
