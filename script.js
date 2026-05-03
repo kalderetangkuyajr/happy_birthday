@@ -106,7 +106,7 @@ const messages = [
 // `Hihigugmaon ko ikaw kada adlaw.`,
 
 //  `Nahihidlaw ako ha imo.`
-   `I wish you all the best ;)`
+   `I wish you all the best.`
 
 ];
 
